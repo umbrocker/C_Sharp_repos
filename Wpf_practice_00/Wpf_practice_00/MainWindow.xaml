@@ -13,7 +13,7 @@
         <Button Width="200pt" Height="30pt">
             <Label Content="Hello World!" FontSize="12pt"/>
         </Button>
-        <TextBlock Text="Hello World!" />
+        <!--TextBlock Text="Hello World!" /-->
         <Grid>
             <Button x:Name="Gomb"
                     Content="Gomb"
@@ -22,5 +22,6 @@
                     Background="Azure" Foreground="Blue"
                     FontFamily="Times New Roman" FontSize="20"
                     FontStyle="Italic" FontWeight="Heavy" Opacity="0.5"/>
-        </Grid>    </StackPanel>
+        </Grid>
+    </StackPanel>
 </Window>
