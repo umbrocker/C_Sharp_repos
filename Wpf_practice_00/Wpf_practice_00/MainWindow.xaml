@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:Wpf_practice_00"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <Button Width="200" Height="30">
+            <Label Content="Hello World!" FontSize="12"/>
+        </Button>
+        <Button Width="200pt" Height="30pt">
+            <Label Content="Hello World!" FontSize="12pt"/>
+        </Button>
+    </StackPanel>
 </Window>
