@@ -13,5 +13,14 @@
         <Button Width="200pt" Height="30pt">
             <Label Content="Hello World!" FontSize="12pt"/>
         </Button>
-    </StackPanel>
+        <TextBlock Text="Hello World!" />
+        <Grid>
+            <Button x:Name="Gomb"
+                    Content="Gomb"
+                    Width="150" Height="30"
+                    HorizontalAlignment="Center" VerticalAlignment="Top"
+                    Background="Azure" Foreground="Blue"
+                    FontFamily="Times New Roman" FontSize="20"
+                    FontStyle="Italic" FontWeight="Heavy" Opacity="0.5"/>
+        </Grid>    </StackPanel>
 </Window>
