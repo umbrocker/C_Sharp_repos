@@ -5,20 +5,135 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_basics"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="400">
-    <Border Padding="10">
+        Loaded="Window_Loaded"
+        Title="WPF basics" Height="800" Width="350">
+    <Border  Padding="10">
         <StackPanel>
+            <!-- Gombok vazz-->
             <Grid>
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Button Margin="0 0 10 0"  Grid.Column="0" Content="Apply" />
-                <Button Grid.Column="1" Content="Reset" />
+                <Button x:Name="ApplyBtn" Click="ApplyBtn_Click" Margin="0 0 10 0"  Grid.Column="0" Content="Apply" />
+                <Button x:Name="ResetBtn" Click="ResetBtn_Click" Grid.Column="1" Content="Reset" />
                 <Button Margin="10 0 0 0" Grid.Column="2" Content="Refresh" />
+
             </Grid>
+
+            <TextBlock Text="Pulse Properties" FontWeight="Bold" Margin="0 10" />
+
+            <!--Leírás-->
+            <TextBlock Text="Description" />
+            <TextBox x:Name="DescriptionTxtBox" Padding="2"/>
+
+            <!--Státusz és revízió-->
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!--Státusz-->
+                <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                    <TextBlock Text="Status" />
+                    <TextBox IsReadOnly="False" Background="#eee" Padding="2"/>
+                </StackPanel>
+
+                <!--Revízió-->
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="Revision" />
+                    <TextBox IsReadOnly="False" Background="#eee" Padding="2"/>
+                </StackPanel>
+
+            </Grid>
+
+            <!--Part number-->
+            <TextBlock Text="Part Number" />
+            <TextBox IsReadOnly="False" Background="#eee" Padding="2"/>
+
+            <!--Nyersanyag-->
+            <TextBlock Text="Raw material" FontWeight="Bold" Margin="0 10" />
+
+            <!--anyag-->
+            <TextBlock Text="Material" />
+            <ComboBox Padding="2"/>
+
+            <!--Gyártási információk-->
+            <TextBlock Text="Manufacturing information" FontWeight="Bold" Margin="0 10" />
+
+            <!--munkahely-->
+            <TextBlock Text="Work centres" Margin="0 0 0 10" />
+
+            <!--checkboxok-->
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!--0. oszlop-->
+                <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                    <CheckBox Checked="Checkbox_checked" x:Name="WeldChbx" Content="Weld"/>
+                    <CheckBox Checked="Checkbox_checked" x:Name="AssemblyChbx" Content="Assembly"/>
+                    <CheckBox Checked="Checkbox_checked" x:Name="PlasmaChbx" Content="Plasma"/>
+                    <CheckBox Checked="Checkbox_checked" x:Name="LaserChbx" Content="Laser"/>
+                    <CheckBox Checked="Checkbox_checked" x:Name="PurchaseChbx" Content="Purchase"/>
+                </StackPanel>
+
+                <!--1. oszlop-->
+                <StackPanel Grid.Column="1">
+                    <CheckBox Checked="Checkbox_checked" x:Name="LatheChbx" Content="Lathe"/>
+                    <CheckBox Checked="Checkbox_checked" x:Name="DrillChbx" Content="Drill"/>
+                    <CheckBox Checked="Checkbox_checked" x:Name="FoldChbx" Content="Fold"/>
+                    <CheckBox Checked="Checkbox_checked" x:Name="RollChbx" Content="Roll"/>
+                    <CheckBox Checked="Checkbox_checked" x:Name="SawChbx" Content="Saw"/>
+                </StackPanel>
+
+            </Grid>
+
+            <!--Hossz-->
+            <TextBlock Text="Length" />
+            <TextBox x:Name="LengthTextbox" Padding="2"/>
+
+            <!--Tömeg-->
+            <TextBlock Text="Mass" />
+            <TextBox x:Name="MassTxtBx" IsReadOnly="False" Background="#eee" Padding="2"/>
+
+            <!--bevonat-->
+            <TextBlock Text="Finish" />
+            <ComboBox x:Name="FinishDropdown" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0" Padding="2">
+                <ComboBoxItem>Painted</ComboBoxItem>
+                <ComboBoxItem>Not Painted</ComboBoxItem>
+            </ComboBox>
+
+            <!--vásárlási információk-->
+            <TextBlock Text="Purchase information" />
+            <ComboBox SelectedIndex="0" Padding="2">
+                <ComboBoxItem>Rubber</ComboBoxItem>
+                <ComboBoxItem>Not Rubber</ComboBoxItem>
+            </ComboBox>
+
+            <!--beszállító név-->
+            <TextBlock Text="Supplier Name" />
+            <TextBox x:Name="SupplierNameTxt" TextChanged="SupplierNameTxt_TextChanged" Padding="2"/>
+
+            <!--beszállító kód-->
+            <TextBlock Text="Supplier Code" />
+            <TextBox Padding="2"/>
+
+            <TextBlock Text="Additional info" FontWeight="Bold" Margin="0 10" />
+
+            <!--megjegyzés-->
+            <TextBlock Text="Note" />
+            <TextBox x:Name="NoteTxtbx" Padding="2"/>
+
+
         </StackPanel>
     </Border>
 </Window>
